@@ -18,10 +18,10 @@ pos_x_jugador = 368
 pos_y_jugador = 536
 
 
-def jugador():
+def jugador(x, y):
     pantalla.blit(
         source=img_jugador,
-        dest=(pos_x_jugador, pos_y_jugador)
+        dest=(x, y)
     )
 
 
@@ -32,5 +32,5 @@ while ejecutar:
         if evento.type == pygame.QUIT:
             ejecutar = False
     
-    jugador()
+    jugador(pos_x_jugador, pos_y_jugador)
     pygame.display.update()
