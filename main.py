@@ -13,6 +13,7 @@ pygame.display.set_caption(
 
 icono = pygame.image.load("ovni.png")
 pygame.display.set_icon(icono)
+fondo = pygame.image.load("fondo.jpg")
 
 img_jugador = pygame.image.load("cohete.png")
 pos_x_jugador = 368
@@ -42,7 +43,9 @@ def enemigo(x, y):
 
 ejecutar = True
 while ejecutar:
-    pantalla.fill((34, 87, 122))
+    # pantalla.fill((34, 87, 122))
+    pantalla.blit(fondo, (0, 0))
+
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             ejecutar = False
