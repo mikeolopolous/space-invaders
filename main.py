@@ -16,13 +16,14 @@ pygame.display.set_icon(icono)
 
 img_jugador = pygame.image.load("cohete.png")
 pos_x_jugador = 368
-pos_y_jugador = 536
+pos_y_jugador = 520
 pos_x_jugador_cambia = 0
 
 img_enemigo = pygame.image.load("enemigo.png")
 pos_x_enemigo = random.randint(0, 736)
 pos_y_enemigo = random.randint(50, 200)
-pos_x_enemigo_cambia = 0
+pos_x_enemigo_cambia = 2
+pos_y_enemigo_cambia = 30
 
 
 def jugador(x, y):
@@ -62,6 +63,14 @@ while ejecutar:
         pos_x_jugador = 0
     elif pos_x_jugador >= 736:
         pos_x_jugador = 736
+    
+    pos_x_enemigo += pos_x_enemigo_cambia
+    if pos_x_enemigo <= 0:
+        pos_x_enemigo_cambia = 2
+        pos_y_enemigo += pos_y_enemigo_cambia
+    elif pos_x_enemigo >= 736:
+        pos_x_enemigo_cambia = -2
+        pos_y_enemigo += pos_y_enemigo_cambia
 
     jugador(pos_x_jugador, pos_y_jugador)
     enemigo(pos_x_enemigo, pos_y_enemigo)
