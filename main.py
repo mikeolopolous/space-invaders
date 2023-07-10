@@ -45,5 +45,10 @@ while ejecutar:
                 pos_x_cambia = 0
     
     pos_x_jugador += pos_x_cambia
+    if pos_x_jugador <= 0:
+        pos_x_jugador = 0
+    elif pos_x_jugador >= 736:
+        pos_x_jugador = 736
+        
     jugador(pos_x_jugador, pos_y_jugador)
     pygame.display.update()
